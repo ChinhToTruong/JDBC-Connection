@@ -45,4 +45,10 @@ public class Book {
         this.price = price;
         this.publishedYear = publishedYear;
     }
+    public Book(int id, String name, int price, Integer publishedYear){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.publishedYear = publishedYear;
+    }
 }

@@ -4,6 +4,7 @@ import Models.Book;
 import Utils.JDBCConnect;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -111,7 +112,8 @@ public class BookDAO implements DAOInterface<Book>{
     }
 
     @Override
-    public ArrayList<Book> selectAll() {
+    public List<Book> selectAll() {
+        List<Book> listBook = new ArrayList<>();
         try{
             // Buoc 1: tao connection
             Connection connection = JDBCConnect.connect();
@@ -121,7 +123,17 @@ public class BookDAO implements DAOInterface<Book>{
 
             // Buoc 3: thuc thi cau len SQL
             String query = "Select * From Book";
-            statement.execute(query);
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int price = resultSet.getInt("price");
+                Integer publishedYear = resultSet.getInt("publishedYear");
+
+                // Xử lý các giá trị như mong muốn
+                Book book = new Book(id, name, price, publishedYear);
+                listBook.add(book);
+            }
 
             System.out.println("Select all thanh cong Book table");
             // Buoc 5: ngat ket noi
@@ -130,7 +142,7 @@ public class BookDAO implements DAOInterface<Book>{
         }catch(SQLException e) {
             System.out.println(e);
         }
-        return new ArrayList<>();
+        return listBook;
     }
 
     @Override
@@ -139,7 +151,7 @@ public class BookDAO implements DAOInterface<Book>{
     }
 
     @Override
-    public ArrayList<Book> selectByCondition(String condition) {
+    public List<Book> selectByCondition(String condition) {
         return null;
     }
 }

@@ -1,14 +1,13 @@
 package DAO;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface DAOInterface<T> {
     public void createTable();
     public void add(T t);
     public void delete(T t);
     public void update(T t);
-    public ArrayList<T> selectAll();
+    public List<T> selectAll();
     public T selectById(int id);
-    public ArrayList<T> selectByCondition(String condition);
+    public List<T> selectByCondition(String condition);
 }
