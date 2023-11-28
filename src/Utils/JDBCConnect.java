@@ -7,7 +7,7 @@ public class JDBCConnect {
         Connection connection = null;
         try{
             // info
-            String url = "jdbc:mysql://localhost:3306/myShop ";
+            String url = "jdbc:mysql://localhost:3306/classicmodels";
             String usename = "root";
             String password = "root";
             // regist driver

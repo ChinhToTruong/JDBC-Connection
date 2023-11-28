@@ -21,3 +21,9 @@
 - Join
 - Subquery
 
+
+### Vị trí các câu query
+- Select , Show like 'key' - SupplierDAO
+- Select, Order - CusomerDAO
+- Delete, update, where, insert - BookDAO
+- where - EmployeeDAO

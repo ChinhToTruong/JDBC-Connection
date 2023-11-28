@@ -1,4 +1,4 @@
-package DAO;
+package Service;
 
 import Models.Book;
 import Utils.JDBCConnect;
@@ -10,9 +10,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAO implements DAOInterface<Book>{
-    public static BookDAO getInstance(){
-        return new BookDAO();
+public class BookService implements ServiceInterface<Book> {
+    public static BookService getInstance(){
+        return new BookService();
     }
 
     @Override

@@ -1,8 +1,8 @@
-package DAO;
+package Service;
 
 import java.util.List;
 
-public interface DAOInterface<T> {
+public interface ServiceInterface<T> {
     public void createTable();
     public void add(T t);
     public void delete(T t);
