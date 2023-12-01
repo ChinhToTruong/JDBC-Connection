@@ -9,21 +9,16 @@
 
 ### Nội dung test
 
-- Basic SQL commands (create, drop, truncate,insert, update, explain, where, order by, having,...)
+- Basic SQL commands (create, drop, truncate,insert, update, explain, where, order by, having,...) - done
 - Transaction
 - Trigger
 - Stored procedure
 - Stored function
 - Built-in function
 - View
-- Index
-- Cte
-- Join
-- Subquery
+- Index - chua biet demo kieu gi
+- Cte 
+- Join - done
+- Subquery - done
 
 
-### Vị trí các câu query
-- Select , Show like 'key' - SupplierDAO
-- Select, Order - CusomerDAO
-- Delete, update, where, insert - BookDAO
-- where - EmployeeDAO
